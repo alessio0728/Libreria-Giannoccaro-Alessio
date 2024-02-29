@@ -1,0 +1,166 @@
+@import 'bootstrap';
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #8CB9BD;
+
+}
+
+.homeD {
+  margin-left: 100px;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav-list li {
+  float: left;
+  margin-right: 110px;
+  padding-right: 110px;
+}
+
+.nav-list li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropbtn {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/*LOGIN*/
+
+.titolo {
+
+  margin-top: 80px;
+  margin-right: 75px;
+}
+
+.conteinerLogin {
+
+  display: flex;
+
+  height: 30vh;
+
+  width: 30%;
+
+  border: solid;
+
+  justify-items: center; 
+
+  margin-left: 650px;
+  
+}
+
+
+.formLogin {
+
+  text-align: center;
+  width: 60%; /* Imposta la larghezza del form al 80% del contenitore */
+  margin: auto; /* Aggiunto per centrare il form */
+}
+
+.formL {
+
+  margin-left: 250px;
+  margin-top: 40px;
+
+}
+
+.formL2 {
+
+  margin-left: 238px;
+  margin-top: 40px;
+}
+
+.formI {
+
+  
+  width: 400px;
+  margin-left: 80px;
+  margin-top: 10px;
+
+
+}
+
+.formB {
+
+  margin-top: 20px;
+  margin-left: 248px;
+  background-color: #FBA834;
+}
+
+.formB:active {
+
+  background-color: #74E291;
+}
+
+/*REGISTRAZIONE*/
+
+.conteinerRegister {
+
+  display: flex;
+
+  height: 60vh;
+
+  width: 30%;
+
+  border: solid;
+
+  justify-items: center; 
+
+  margin-left: 650px;
+
+  margin-top: 50px;
+  
+}
+
+/*LOGOUT*/
+
+.authL {
+  display: flex;
+  align-items: center;
+}
+
+.logout {
+  margin-left: 80px;
+}
+
+.logout button {
+  background-color: #3498db; /* Colore di default del pulsante */
+  color: #ffffff; /* Colore del testo del pulsante */
+  transition: background-color 0.3s ease; /* Transizione fluida del colore */
+}
+
+.logout button:hover {
+  background-color: #e74c3c; /* Colore del pulsante al passaggio del mouse */
+}
+
+
+
+
+

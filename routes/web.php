@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\Pagecontroller;
 
 /*
@@ -22,6 +23,6 @@ Route::get('/', function () {
 
 Route::get('/',[Pagecontroller::Class,'home'])->name('home');
 
-//ROtte GRUD con il metodo resourse
+//Rotte GRUD con il metodo resourse
 
-Route::resource('Books',BookController::Class);
+Route::resource('books',BookController::Class);

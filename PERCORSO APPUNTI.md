@@ -57,6 +57,8 @@ andare su resources /css/app.css scrivere
    
    {{$title ?? config('app.name')}}
 
+   questa funzione per modificare il nome devi andare sulla estensione .env e selezionare il nome APP_NAME=
+
 - 4 SEMPRE NEL LAYOUT  nel body inserire la funzione che collega tutte le modifiche front end alle altre pagine
 
      {{$slot}}

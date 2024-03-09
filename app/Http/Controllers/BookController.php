@@ -12,7 +12,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        
+        $books= book::all();
+        return view('books.index',compact('books'));
     }
 
     /**

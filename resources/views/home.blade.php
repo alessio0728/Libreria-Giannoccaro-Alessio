@@ -66,7 +66,7 @@
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://m.media-amazon.com/images/I/719CeDchSsL._AC_UF1000,1000_QL80_.jpg"  class="d-block w-100" alt="...">
+                        <img src="https://m.media-amazon.com/images/I/719CeDchSsL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="https://cdn.robadadonne.it/wp-content/uploads/sites/8/2015/03/i-pilastri-della-terra1-640x980.jpg" class="d-block w-100" alt="...">

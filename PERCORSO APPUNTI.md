@@ -438,6 +438,31 @@ DB_PASSWORD=Database89
 
            php artisan route:list
 
+   - 3 Andando sul bookcontroller bisogna gestire le varie finzioni iniziamo dalla 
+
+      • INDEX : Serve a reccuperare tutti dati esempio tutti i libri con il metodo all() esempio:
+
+            $books = book::all();
+            return view('books.index',compact('books'));
+
+        poi devi creare una vista ricordati di inserire nelle viste una cartelle perchè nella funzione sono divisi da un punto 
+
+        Se vuoi reccuperare tutte le card sulla pagina web devi fare un @foreach con al interno una card poi nel titolo x reccuperare quel dato dal database devi usare la funzione esempio per il tittolo e per l'autore e per la descrizione (qualsiasi dato che si trova nel database ) :
+
+            {{$book->title}}
+
+            {{$book->author}}
+
+            {{$book->price}}
+
+            {{$book->description}}
+
+        Ricordati di creare la rotta nella navbar per visualizzare la pagina web usa il metodo con laraverl esempio nel href :
+
+             {{route('books.index')}}
+
+    • CREATE
+
 
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\View;
+
 class BookController extends Controller
 {
     /**
@@ -13,9 +15,12 @@ class BookController extends Controller
     public function index()
     {
         
-        $books= book::all();
+        $books= book::all()->sortBy('title');
         return view('books.index',compact('books'));
+
+      
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -63,24 +63,117 @@
         <!--IMMAGINE CAMBIA DIV DESTRA-->
 
         <div class="F2contenitore">
+            
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                
                 <div class="carousel-inner">
+
+                     <!--IMMAGINE 1-->
+
                     <div class="carousel-item active">
-                        <img src="https://m.media-amazon.com/images/I/719CeDchSsL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="...">
+
+                        <div class="card mb-3 " style="max-width: 800px; max-height: 8000px; margin-top:100px; background-color: #{{ dechex(mt_rand(0, 0xFFFFFF)) }};">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="https://m.media-amazon.com/images/I/719CeDchSsL._AC_UF1000,1000_QL80_.jpg" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">LETTURA LIBRO CON AUTORE</h5>
+                                  <p class="card-text">Il giorno 22 Marzo 2024 ore 18:00 alla Feltrinelli di Bari lo scrittore Dan Brown leggera un estratto del suo libro più famoso. <br>Per assistere al evento bisogna prenotarsi al numero: 0123456789 <br> sito :www.prenotaevento.it </p>
+                                  <p class="card-text"><small class="text-body-secondary">Posti disponibili: 50</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                     </div>
+
+                     <!--IMMAGINE 2-->
+
                     <div class="carousel-item">
-                        <img src="https://cdn.robadadonne.it/wp-content/uploads/sites/8/2015/03/i-pilastri-della-terra1-640x980.jpg" class="d-block w-100" alt="...">
+
+                        <div class="card mb-3 " style="max-width: 800px; max-height: 8000px; margin-top:100px; background-color: #{{ dechex(mt_rand(0, 0xFFFFFF)) }};">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="https://cdn.robadadonne.it/wp-content/uploads/sites/8/2015/03/i-pilastri-della-terra1-640x980.jpg" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">LETTURA LIBRO CON AUTORE</h5>
+                                  <p class="card-text">Il giorno 16 Aprile 2024 ore 18:00 alla Feltrinelli di Bari lo scrittore Ken Follett leggera un estratto del suo libro più famoso. <br>Per assistere al evento bisogna prenotarsi al numero: 0123456789 <br> sito :www.prenotaevento.it </p>
+                                  <p class="card-text"><small class="text-body-secondary">Posti disponibili: 50</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </div>
+
+                     <!--IMMAGINE 3-->
+
                     <div class="carousel-item">
-                        <img src="https://m.media-amazon.com/images/I/51ERRBRL10L.jpg" class="d-block w-100" alt="...">
+
+                        <div class="card mb-3 " style="max-width: 800px; max-height: 8000px; margin-top:100px; background-color: #{{ dechex(mt_rand(0, 0xFFFFFF)) }};">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="https://m.media-amazon.com/images/I/51ERRBRL10L.jpg" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">LETTURA LIBRO CON AUTORE</h5>
+                                  <p class="card-text">Il giorno 20 Aprile 2024 ore 18:00 alla Feltrinelli di Bari lo scrittore Licia Troisi leggera un estratto del suo libro più famoso. <br>Per assistere al evento bisogna prenotarsi al numero: 0123456789 <br> sito :www.prenotaevento.it </p>
+                                  <p class="card-text"><small class="text-body-secondary">Posti disponibili: 50</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                     </div>
+
+                    <!--IMMAGINE 4-->
+
                     <div class="carousel-item">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/61sKDZBIS-L._AC_UL600_SR600,600_.jpg" class="d-block w-100" alt="...">
+
+                        <div class="card mb-3 " style="max-width: 800px; max-height: 8000px; margin-top:100px; background-color: #{{ dechex(mt_rand(0, 0xFFFFFF)) }};">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/I/61sKDZBIS-L._AC_UL600_SR600,600_.jpg" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">LETTURA LIBRO CON AUTORE</h5>
+                                  <p class="card-text">Il giorno 10 Maggio 2024 ore 18:00 alla Feltrinelli di Bari lo scrittore Fabio Volo leggera un estratto del suo libro più famoso. <br>Per assistere al evento bisogna prenotarsi al numero: 0123456789 <br> sito :www.prenotaevento.it </p>
+                                  <p class="card-text"><small class="text-body-secondary">Posti disponibili: 50</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                     </div>
+                    </div>
+
+                    <!--IMMAGINE 5-->
+
                     <div class="carousel-item">
-                        <img src="https://www.mondadori.it/content/uploads/2023/11/978880475386HIG.JPG" class="d-block w-100" alt="...">
+
+                        <div class="card mb-3 " style="max-width: 800px; max-height: 8000px; margin-top:100px; background-color: #{{ dechex(mt_rand(0, 0xFFFFFF)) }};">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="https://m.media-amazon.com/images/I/71+pKvL865L._AC_UF1000,1000_QL80_.jpg" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">LETTURA LIBRO CON AUTORE</h5>
+                                  <p class="card-text">Il giorno 20 Maggio 2024 ore 18:00 alla Feltrinelli di Bari lo scrittore Chiara Gamberale leggera un estratto del suo libro più famoso. <br>Per assistere al evento bisogna prenotarsi al numero: 0123456789 <br> sito :www.prenotaevento.it </p>
+                                  <p class="card-text"><small class="text-body-secondary">Posti disponibili: 50</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                     </div>
                 </div>
+                
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>

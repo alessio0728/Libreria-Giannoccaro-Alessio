@@ -19,6 +19,9 @@
                           <p class="card-text">GENERE:{{$book->genre}} </p>
                           <p class="card-text">PREZZO:{{$book->price}} €</p>
                           <a href="#" class="btn btn-primary">ACQUISTA</a>
+
+                          <div id="contenitore_bottone_like"></div>
+                          
                       </div>
                   </div>
               </div>

@@ -499,7 +499,134 @@ DB_PASSWORD=Database89
 
 • style="background-color: #{{ dechex(mt_rand(0, 0xFFFFFF)) }};"  Con questa funzione puoi cambiare dinamicamente il colore in modo casuale funziona solo su laravel 
 
-    • CREATE
+    • CREATE : Andare nel controller (in questo caso Bookcontroller ) e creare la rotta della creazione card
+
+        public function create()
+    {
+        return view('books.create');
+    }
+    
+        poi bisogna andare nella vista e creare nomeSceltoDaTe.blade.php
+
+    nella vista personalizzalo a tua scelta consisigliato con dei form che riportano le voci del database 
+
+    IMPORTANTE  se vogliamo aggiungere FILE al nostro form bisogna aggiungere la voce <form enctype="multipart/form-data"></form> poi ricordati di cambiare action con la formula blade {{route('books.store')}} codice completo del form 
+
+    <x-layout>
+
+    <center>
+        <h1 class="titolo">CREA IL TUO ARTICOLO</h1>
+    </center>
+
+
+    <div class="conteinerRegister" style="margin-top=50px">
+
+        <div class="row">
+
+
+            <form  method="post" action="{{route('books.store')}}" enctype="multipart/form-data">
+
+                @csrf
+                
+                <div class="mb-3">
+
+                <label class="formL" for="title">Titolo:</label><br>
+                <input class="formI" type="text" id="title" name="title" required><br>
+                
+                @error('title')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+
+              </div>
+
+                <div class="mb-3">
+
+                <label class="formL2" for="price">Prezzo:</label><br>
+                <input class="formI" type="decimal" id="price" name="price" required><br>
+
+                @error('price')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+
+           <div class="mb-3">
+                <label class="formL2" for="description"> Descrizione:</label><br>
+                <input class="formI" type="text" id="description" name="description"
+
+                @error('description')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+
+            </div>
+
+            <div class="mb-3">
+                <label class="formL2" for="image"> Immagine:</label><br>
+                <input class="formI" type="file" id="image" name="image"
+
+                @error('image')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+
+                <button style="margin-left: 185px; margin-top: 20px;" type="submit" class="btn btn-primary">SALVA IL TUO LIBRO</button>
+            
+            </form>
+
+        </div>
+
+    </div> 
+
+
+</x-layout>
+
+- Ora dobbiamo inserire lato sinistro Controllers/Middleware  per far visualizzare bene la card creata dal autore dal terminale inserire questo dato 
+
+       php artisan make:request NomeSceltoDaTeStoreRequest esempio php artisan make:request BookStoreRequest 
+
+ Una volta dentro al BookStoreRequest modificare da FALSE A TRUE  perchè cosi avvia se verifica che sia logatto 
+
+     public function authorize(): bool
+    {
+        return true;
+    }
+
+Invece della funzione RULES bisogna inserire tutte le voci che abbiamo inserito nel form di crezione libro e tutti i suoi paramentri esempio pratico
+
+       /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'title'=>'required|max:50',       //indica che un valore fondamentale caratteri massimi 50
+            'description'=>'required|min:20|max:500',   //idem con il valore minimo
+            'price'=>'required|',     //valore numerico
+            'image'=>'image|5096',  // valore in mb 
+
+        ];
+    }
+  }
+
+  - Poi bisogna andare sul bookcontroller alla voca 
+
+      public function store(Request $request)
+    {
+        //
+    }
+
+e modificare la voce Request con la versione castol che abbiamo creato con la BookStoreRequest e aggiungere la funzione di verifica esempio pratico:
+
+    Book::create($request->validated());
+
+- Per evitare errori devi riportare i dati del database anche in lato sinistro app/http/models/nome del fil in questo caso Book per una questione di protezione esempio:
+
+    class Book extends Model
+{
+    use HasFactory;
+
+    protected $fillable=['title','price','author','description','image'];
+}
 
 
 

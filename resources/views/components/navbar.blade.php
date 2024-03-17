@@ -15,6 +15,7 @@
         <ul class="nav-list">
             <li class="homeDA"><a href="/">Home</a></li>
             <li><a href="{{route('books.index')}}">Libri</a></li>
+            <li><a href="{{route('books.create')}}">Crea il tuo Libro</a></li>
             <li><a href="#">Recensioni</a></li>
             <li class="authL"><a href="#">Benvenuto {{ auth()->user()->name }}</a>
                 <form class="logout" action="/logout" method="post">

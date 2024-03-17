@@ -27,15 +27,18 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('books.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BookStoreRequest $request)
     {
-        //
+        $validated=$request->validated();
+        Book::create(['author'=>auth()->user()->name-> 'title'=>$validated=>['title'],'description'=>$validated=>['description'],'price'=>$validated=>['price']],);
+
+        return redirect()->back()->with(['success'=>'Libro inserito con successo']);
     }
 
     /**
@@ -59,7 +62,10 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $validated=$request->validated();
+        Book::create(['author'=>auth()->user()->name,'title'=>$validated=>['title'],'description'=>$validated=>['description'],'price'=>$validated=>['price']],);
+
+        return redirect()->back()->with(['success'=>'Libro inserito con successo']);
     }
 
     /**

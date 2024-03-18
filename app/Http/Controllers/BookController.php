@@ -6,6 +6,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\View;
+use App\Http\Requests\BookStoreRequest;
 
 class BookController extends Controller
 {
@@ -36,7 +37,17 @@ class BookController extends Controller
     public function store(BookStoreRequest $request)
     {
         $validated=$request->validated();
-        Book::create(['author'=>auth()->user()->name-> 'title'=>$validated=>['title'],'description'=>$validated=>['description'],'price'=>$validated=>['price']],);
+        book::create([
+            'author' => auth()->user()->name,
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'image' => $validated['image']
+        ]);
+       // if($request->hasfile('image')&& $request->file('image')->isvalid()){
+
+
+        //}
 
         return redirect()->back()->with(['success'=>'Libro inserito con successo']);
     }
@@ -54,18 +65,24 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('books.edit',compact('book'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book)
+    public function update(BookStoreRequest $request, Book $book)
     {
         $validated=$request->validated();
-        Book::create(['author'=>auth()->user()->name,'title'=>$validated=>['title'],'description'=>$validated=>['description'],'price'=>$validated=>['price']],);
+        Book::update([
+            
+            "title" => $validated["title"],
+            "description" => $validated["description"],
+            "price" => $validated["price"],
+            'image' => $validated['image']
+        ]);
 
-        return redirect()->back()->with(['success'=>'Libro inserito con successo']);
+        return redirect()->back()->with(['success'=>'Libro aggiornato con successo']);
     }
 
     /**
@@ -73,6 +90,6 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
     }
 }

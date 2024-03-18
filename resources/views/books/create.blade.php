@@ -13,6 +13,12 @@
             <form  method="post" action="{{route('books.store')}}" enctype="multipart/form-data">
 
                 @csrf
+
+                @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
                 
                 <div class="mb-3">
 

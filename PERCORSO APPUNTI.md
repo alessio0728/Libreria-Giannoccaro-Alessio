@@ -527,6 +527,12 @@ DB_PASSWORD=Database89
             <form  method="post" action="{{route('books.store')}}" enctype="multipart/form-data">
 
                 @csrf
+
+                @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
                 
                 <div class="mb-3">
 
@@ -596,17 +602,16 @@ Invece della funzione RULES bisogna inserire tutte le voci che abbiamo inserito 
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
+    public function rules(): array  {
         return [
-            'title'=>'required|max:50',       //indica che un valore fondamentale caratteri massimi 50
-            'description'=>'required|min:20|max:500',   //idem con il valore minimo
-            'price'=>'required|',     //valore numerico
-            'image'=>'image|5096',  // valore in mb 
+            'title'=>'required|max:50',  //indica un valore fondamentale massimo 50 caratteri
+            'description'=>'required|min:20|max:500', //indica un vaolre fondamentale minimo e massimo
+            'price' => 'required|numeric|min:0',  //indica un numero fondamentale numerico minimo 0
+            'image' => 'image|max:4096',  //indica la grandenza massima in byte
 
         ];
     }
-  }
+  
 
   - Poi bisogna andare sul bookcontroller alla voca 
 
@@ -627,6 +632,68 @@ e modificare la voce Request con la versione castol che abbiamo creato con la Bo
 
     protected $fillable=['title','price','author','description','image'];
 }
+
+-- • STORE inserire queste funzioni che creano il collegamento al form e alla validificazione esempio pratico :
+
+   public function store(BookStoreRequest $request)
+    {
+        $validated=$request->validated();
+        book::create([
+            'author' => auth()->user()->name,
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'image' => $validated['image']
+        ]);
+       // if($request->hasfile('image')&& $request->file('image')->isvalid()){
+
+
+        //}
+
+        return redirect()->back()->with(['success'=>'Libro inserito con successo']);  //indica la funzione che fa apparire il messaggio di successo se l'inserimento è andato a buon fine 
+    }
+
+
+-- • # EDIT 
+
+serve per visulizzare le modifiche alle card e creare il percorso con la vista esempio:
+
+   public function edit(Book $book)
+    {
+        return view('books.edit',compact('book'));
+    }
+
+    poi bisogna creare la vista seguendo il percorso 
+
+-- • # UPDATE
+
+serve per caricare le nuove modifiche al file esempio:
+
+   public function update(BookStoreRequest $request, Book $book)
+    {
+        $validated=$request->validated();
+        Book::update([
+            
+            "title" => $validated["title"],
+            "description" => $validated["description"],
+            "price" => $validated["price"],
+            'image' => $validated['image']
+        ]);
+
+        return redirect()->back()->with(['success'=>'Libro aggiornato con successo']);
+    }
+
+-- • # DELETE
+
+serve per cancellare completamente la card con la formula :
+
+    public function destroy(Book $book)
+    {
+        $book->delete();
+    }
+
+
+
 
 
 
